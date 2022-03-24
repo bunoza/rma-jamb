@@ -9,14 +9,14 @@ import Foundation
 
 class ResultCalculator {
     
-    let numbers : [Int]
+    let numbers: [Int]
     
     init(dice: [Die]) {
         numbers = dice.map({ $0.number })
     }
     
     func checkForResults() -> [GameResult] {
-        var results : [GameResult] = []
+        var results: [GameResult] = []
         if checkForJamb() { results.append(.jamb) }
         if checkForPoker() { results.append(.poker) }
         if checkForTris() { results.append(.tris) }
@@ -54,7 +54,7 @@ class ResultCalculator {
     }
     
     func checkForOccurrences() -> Int {
-        var max : Int = 0
+        var max: Int = 0
         for i in 1...6 {
             let occurrences = numbers.filter({ $0 == i }).count
             if occurrences > max {

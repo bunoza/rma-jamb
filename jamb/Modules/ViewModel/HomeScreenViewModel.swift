@@ -9,13 +9,13 @@ import Foundation
 import Combine
 import SwiftUI
 
-class HomeScreenViewModel : ObservableObject {
+class HomeScreenViewModel: ObservableObject {
     
-    @Published var screenData : [Die]
-    @Published var numberOfThrowsLeft : Int
-    var resultCalculator : ResultCalculator?
+    @Published var screenData: [Die]
+    @Published var numberOfThrowsLeft: Int
+    var resultCalculator: ResultCalculator?
     
-    var resultString : String
+    var resultString: String
     
     init() {
         self.numberOfThrowsLeft = 3

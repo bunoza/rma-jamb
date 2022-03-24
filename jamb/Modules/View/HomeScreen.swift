@@ -9,9 +9,9 @@ import SwiftUI
 
 struct HomeScreen: View {
     
-    @ObservedObject var viewModel : HomeScreenViewModel
-    @State var gameOver : Bool
-    @State var isChecked : [Bool]
+    @ObservedObject var viewModel: HomeScreenViewModel
+    @State var gameOver: Bool
+    @State var isChecked: [Bool]
     
     let screenHeight = UIScreen.main.bounds.height
     
@@ -76,7 +76,7 @@ struct HomeScreen: View {
                                     isChecked[index].toggle()
                                 }
                             }) {
-                                Image(systemName: isChecked[index] ? "checkmark.square" : "square")
+                                Image(systemName: isChecked[index] ? "checkmark.square": "square")
                             }
                             Spacer()
                         }

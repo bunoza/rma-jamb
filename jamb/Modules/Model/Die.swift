@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 class Die {
-    var number : Int
-    var isLocked : Bool
+    var number: Int
+    var isLocked: Bool
     
     init(number: Int, isLocked: Bool) {
         self.number = number
