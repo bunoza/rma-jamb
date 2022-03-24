@@ -15,16 +15,17 @@ class HomeScreenViewModel: ObservableObject {
     @Published var numberOfThrowsLeft: Int
     var resultCalculator: ResultCalculator?
     
-    var resultString: String
-    
     init() {
         self.numberOfThrowsLeft = 3
         self.screenData = [Die]()
-        resultString = "Your result: "
+        setDiceDefaultValue()
+    }
+    
+    func setDiceDefaultValue() {
         for _ in 1...6 {
             self.screenData.append(
                 Die(
-                    number: Int.random(in: 1...6),
+                    number: 1,
                     isLocked: false
                 )
             )
@@ -35,10 +36,9 @@ class HomeScreenViewModel: ObservableObject {
         self.resultCalculator = ResultCalculator(dice: screenData)
         if let resultCalculator = resultCalculator {
             let results = resultCalculator.checkForResults()
-            let tempResults = createResultString(results: results)
-            return tempResults
+            return createResultString(results: results)
         }
-        return resultString
+        return "Error!"
     }
     
     func createResultString(results: [GameResult]) -> String {
@@ -68,6 +68,5 @@ class HomeScreenViewModel: ObservableObject {
             self.screenData[i].isLocked = false
             self.screenData[i].number = Int.random(in: 1...6)
         }
-        
     }
 }

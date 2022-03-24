@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ResultChecker {
-    func check(dice: [Die]) -> Bool
+    func check(dice: [Int]) -> GameResult
 }

@@ -8,17 +8,17 @@
 import Foundation
 
 extension Array {
-    func checkForOccurrences() -> Int {
-        if !self.isEmpty && self[0] {
-            
-        }
-        var max: Int = 0
-        for i in 1...6 {
-            let occurrences = self.filter({ $0 as! Int == i }).count
-            if occurrences > max {
-                max = occurrences
+    func checkForOccurrences() -> Int? {
+        if !self.isEmpty && self[0] is Int {
+            var max: Int = 0
+            for i in 1...6 {
+                let occurrences = self.filter({ $0 as! Int == i }).count
+                if occurrences > max {
+                    max = occurrences
+                }
             }
+            return max
         }
-        return max
+        return nil
     }
 }

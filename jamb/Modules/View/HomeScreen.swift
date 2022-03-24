@@ -18,7 +18,7 @@ struct HomeScreen: View {
     init(viewModel: HomeScreenViewModel) {
         self.viewModel = viewModel
         self.gameOver = false
-        self.isChecked = [false, false, false, false, false, false]
+        self.isChecked = [Bool](repeating: false, count: 6)
     }
     
     var body: some View {
@@ -94,7 +94,7 @@ struct HomeScreen: View {
             isPresented: $gameOver,
             content: {
                 Alert(
-                    title: Text("Congrats!"),
+                    title: Text("Result"),
                     message: Text(viewModel.getResults()),
                     dismissButton: .default(Text("OK"))
                 )

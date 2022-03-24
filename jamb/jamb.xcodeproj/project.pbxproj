@@ -23,6 +23,13 @@
 		C5C3C4F927E4EFF1003CB24E /* ResultCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3C4F727E4EFF1003CB24E /* ResultCalculator.swift */; };
 		C5C3C4FB27E4FB0E003CB24E /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3C4FA27E4FB0E003CB24E /* GameResult.swift */; };
 		C5C3C4FC27E4FB0E003CB24E /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3C4FA27E4FB0E003CB24E /* GameResult.swift */; };
+		C5CFF48227EC8E440066C7C8 /* ResultChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFF48127EC8E440066C7C8 /* ResultChecker.swift */; };
+		C5CFF48527EC8E900066C7C8 /* JambChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFF48427EC8E900066C7C8 /* JambChecker.swift */; };
+		C5CFF48827EC8F250066C7C8 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFF48727EC8F250066C7C8 /* Array+Extensions.swift */; };
+		C5CFF48A27EC91BB0066C7C8 /* PokerChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFF48927EC91BB0066C7C8 /* PokerChecker.swift */; };
+		C5CFF48C27EC91ED0066C7C8 /* TrisChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFF48B27EC91ED0066C7C8 /* TrisChecker.swift */; };
+		C5CFF48E27EC92100066C7C8 /* StraightChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFF48D27EC92100066C7C8 /* StraightChecker.swift */; };
+		C5CFF49027EC94C30066C7C8 /* ResultCheckerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFF48F27EC94C30066C7C8 /* ResultCheckerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,13 @@
 		C57AD56027E3C0D50086432B /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		C5C3C4F727E4EFF1003CB24E /* ResultCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCalculator.swift; sourceTree = "<group>"; };
 		C5C3C4FA27E4FB0E003CB24E /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		C5CFF48127EC8E440066C7C8 /* ResultChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultChecker.swift; sourceTree = "<group>"; };
+		C5CFF48427EC8E900066C7C8 /* JambChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JambChecker.swift; sourceTree = "<group>"; };
+		C5CFF48727EC8F250066C7C8 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		C5CFF48927EC91BB0066C7C8 /* PokerChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerChecker.swift; sourceTree = "<group>"; };
+		C5CFF48B27EC91ED0066C7C8 /* TrisChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrisChecker.swift; sourceTree = "<group>"; };
+		C5CFF48D27EC92100066C7C8 /* StraightChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StraightChecker.swift; sourceTree = "<group>"; };
+		C5CFF48F27EC94C30066C7C8 /* ResultCheckerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCheckerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,7 @@
 		C568B9DD27E51AA00048A5A7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C5CFF48027EC8E170066C7C8 /* ResultChecker */,
 				C5C3C4F727E4EFF1003CB24E /* ResultCalculator.swift */,
 				C568B9D927E518490048A5A7 /* StringFormatter.swift */,
 			);
@@ -87,6 +102,7 @@
 		C57AD53B27E3BA4A0086432B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C5CFF48627EC8ED90066C7C8 /* Extensions */,
 				C568B9DD27E51AA00048A5A7 /* Utils */,
 				C568B9DC27E51A960048A5A7 /* Model */,
 				C57AD53C27E3BA4A0086432B /* jambApp.swift */,
@@ -144,6 +160,35 @@
 				C57AD56027E3C0D50086432B /* Die.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C5CFF48027EC8E170066C7C8 /* ResultChecker */ = {
+			isa = PBXGroup;
+			children = (
+				C5CFF48327EC8E780066C7C8 /* ResultCheckerImpl */,
+				C5CFF48127EC8E440066C7C8 /* ResultChecker.swift */,
+				C5CFF48F27EC94C30066C7C8 /* ResultCheckerFactory.swift */,
+			);
+			path = ResultChecker;
+			sourceTree = "<group>";
+		};
+		C5CFF48327EC8E780066C7C8 /* ResultCheckerImpl */ = {
+			isa = PBXGroup;
+			children = (
+				C5CFF48427EC8E900066C7C8 /* JambChecker.swift */,
+				C5CFF48927EC91BB0066C7C8 /* PokerChecker.swift */,
+				C5CFF48B27EC91ED0066C7C8 /* TrisChecker.swift */,
+				C5CFF48D27EC92100066C7C8 /* StraightChecker.swift */,
+			);
+			path = ResultCheckerImpl;
+			sourceTree = "<group>";
+		};
+		C5CFF48627EC8ED90066C7C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C5CFF48727EC8F250066C7C8 /* Array+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,12 +290,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C57AD54E27E3BA4C0086432B /* HomeScreen.swift in Sources */,
+				C5CFF48827EC8F250066C7C8 /* Array+Extensions.swift in Sources */,
 				C57AD55B27E3BF860086432B /* HomeScreenViewModel.swift in Sources */,
+				C5CFF48227EC8E440066C7C8 /* ResultChecker.swift in Sources */,
 				C57AD54C27E3BA4C0086432B /* jambApp.swift in Sources */,
 				C568B9DA27E518490048A5A7 /* StringFormatter.swift in Sources */,
 				C57AD56127E3C0D50086432B /* Die.swift in Sources */,
 				C5C3C4FB27E4FB0E003CB24E /* GameResult.swift in Sources */,
 				C5C3C4F827E4EFF1003CB24E /* ResultCalculator.swift in Sources */,
+				C5CFF49027EC94C30066C7C8 /* ResultCheckerFactory.swift in Sources */,
+				C5CFF48A27EC91BB0066C7C8 /* PokerChecker.swift in Sources */,
+				C5CFF48527EC8E900066C7C8 /* JambChecker.swift in Sources */,
+				C5CFF48E27EC92100066C7C8 /* StraightChecker.swift in Sources */,
+				C5CFF48C27EC91ED0066C7C8 /* TrisChecker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

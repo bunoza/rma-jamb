@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+class ResultCheckerFactory {
+    private let jambChecker = JambChecker()
+    private let pokerChecker = PokerChecker()
+    private let trisChecker = TrisChecker()
+    private let straightChecker = StraightChecker()
+    
+    func getCheckers() -> [ResultChecker] {
+        return [jambChecker, pokerChecker, trisChecker, straightChecker]
+    }
+}

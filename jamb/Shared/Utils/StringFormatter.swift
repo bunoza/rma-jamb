@@ -13,8 +13,7 @@ class StringFormatter {
         var tempString = "Your result: "
         
         if results[0] == .none {
-            tempString += " None "
-            return tempString
+            return "Better luck next time!"
         }
         
         for item in results {
