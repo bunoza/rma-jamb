@@ -51,7 +51,11 @@ struct HomeScreen: View {
     }
     
     func renderBackground() -> some View {
-        Image("background").resizable().scaledToFill().ignoresSafeArea().foregroundColor(.white)
+        Image("background")
+            .resizable()
+            .scaledToFill()
+            .ignoresSafeArea()
+            .foregroundColor(.white)
     }
     
     func renderTitle() -> some View {
@@ -66,26 +70,36 @@ struct HomeScreen: View {
                 .scaledToFit()
                 .frame(width: screenHeight * 0.1)
                 .padding()
-                .overlay(content: {
-                    HStack {
-                        Spacer()
-                        VStack {
-                            Button(action: {
-                                if viewModel.numberOfThrowsLeft != 3 {
-                                    viewModel.screenData[index].isLocked.toggle()
-                                    isChecked[index].toggle()
-                                }
-                            }) {
-                                Image(systemName: isChecked[index] ? "checkmark.square": "square")
-                            }
+                .overlay(
+                    content: {
+                        HStack {
                             Spacer()
+                            VStack {
+                                Button(
+                                    action: {
+                                        if viewModel.numberOfThrowsLeft != 3 {
+                                            viewModel.screenData[index].isLocked.toggle()
+                                            isChecked[index].toggle()
+                                        }
+                                    }
+                                ) {
+                                    Image(systemName: isChecked[index] ? "checkmark.square": "square")
+                                }
+                                Spacer()
+                            }
                         }
-                    }
-                })
+                    })
         }
-        .alert(isPresented: $gameOver, content: {
-            Alert(title: Text("Congrats!"), message: Text(viewModel.getResults()), dismissButton: .default(Text("OK")))
-        })
+        .alert(
+            isPresented: $gameOver,
+            content: {
+                Alert(
+                    title: Text("Congrats!"),
+                    message: Text(viewModel.getResults()),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
+        )
     }
     
     func renderIO() -> some View {
@@ -115,36 +129,45 @@ struct HomeScreen: View {
     }
     
     func renderStartThrowButton() -> some View {
-        Button(action: {
-            viewModel.throwDice()
-            if viewModel.numberOfThrowsLeft == 0 {
-                gameOver = true
+        Button(
+            action: {
+                viewModel.throwDice()
+                if viewModel.numberOfThrowsLeft == 0 {
+                    gameOver = true
+                }
+            },
+            label: {
+                Text(viewModel.numberOfThrowsLeft == 3 ? "Start" : "Throw")
             }
-        }, label: {
-            Text(viewModel.numberOfThrowsLeft == 3 ? "Start" : "Throw")
-        })
+        )
         .padding()
     }
     
     func renderNewGameButton() -> some View {
-        Button(action: {
-            gameOver = false
-            viewModel.numberOfThrowsLeft = 0
-            viewModel.startNewGame()
-            resetChecked()
-        }, label: {
-            Text("New game")
-        })
+        Button(
+            action: {
+                gameOver = false
+                viewModel.numberOfThrowsLeft = 0
+                viewModel.startNewGame()
+                resetChecked()
+            },
+            label: {
+                Text("New game")
+            }
+        )
         .padding()
     }
     
     func renderAcceptButton() -> some View {
-        Button(action: {
-            viewModel.numberOfThrowsLeft = 0
-            gameOver = true
-        }, label: {
-            Text("Accept")
-        })
+        Button(
+            action: {
+                viewModel.numberOfThrowsLeft = 0
+                gameOver = true
+            },
+            label: {
+                Text("Accept")
+            }
+        )
         .padding()
     }
 }

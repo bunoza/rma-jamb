@@ -22,7 +22,12 @@ class HomeScreenViewModel: ObservableObject {
         self.screenData = [Die]()
         resultString = "Your result: "
         for _ in 1...6 {
-            self.screenData.append(Die(number: Int.random(in: 1...6), isLocked: false))
+            self.screenData.append(
+                Die(
+                    number: Int.random(in: 1...6),
+                    isLocked: false
+                )
+            )
         }
     }
     
